@@ -103,3 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('subject').value = 'Nuevo mensaje de ' + name;
     });
 });
+
+window.onbeforeunload = () => {
+  for(const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+}
