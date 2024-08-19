@@ -1,388 +1,439 @@
 /* Reset de estilos por defecto del navegador */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina los márgenes por defecto de todos los elementos */
+    padding: 0; /* Elimina el padding por defecto de todos los elementos */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total del elemento */
 }
 
 /* Estilos generales del cuerpo de la página */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif; /* Establece la fuente predeterminada de la página */
+    line-height: 1.6; /* Controla la altura de línea del texto, haciendo el texto más legible */
+    background-color: #f4f4f4; /* Define un color de fondo gris claro para la página */
 }
 
 /* Contenedor principal de la página */
 .container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 80%; /* Establece el ancho del contenedor al 80% del ancho del navegador */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor a 1200px */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Añade un padding interno de 20px a todos los lados del contenedor */
 }
 
 /* Estilos del encabezado */
 header {
-    background: #333; /* Cambiado de #000 a #333 */
-    color: #fff;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: #333; /* Establece un fondo gris oscuro para el header */
+    color: #fff; /* Define el color del texto dentro del header como blanco */
+    padding: 1px 0; /* Añade un padding de 10px en la parte superior e inferior del header */
+    position: sticky; /* Hace que el header se mantenga visible en la parte superior al hacer scroll */
+    top: 0; /* Asegura que el header esté pegado a la parte superior de la página */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos al hacer scroll */
 }
 
+/* Contenido dentro del header */
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Utiliza flexbox para alinear los elementos del header */
+    justify-content: space-between; /* Coloca los elementos dentro del header en extremos opuestos */
+    align-items: center; /* Alinea verticalmente los elementos en el centro del header */
 }
 
+/* Contenedor del logo */
 .logo-container {
-    flex: 1;
-    margin-left: 100px;
+    flex: 1; /* Hace que el contenedor del logo ocupe 1 parte del espacio disponible */
+    margin-left: 10px; /* Añade un margen de 10px a la izquierda del logo */
 }
 
+/* Estilo del logo */
 .logo {
-    max-height: 80px;
+    max-height: 80px; /* Limita la altura máxima del logo a 80px */
 }
 
 /* Navegación */
 nav {
-    flex: 2;
+    flex: 4; /* Hace que el contenedor de la navegación ocupe 4 partes del espacio disponible */
 }
 
+/* Estilos de la lista de navegación */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
+    list-style: none; /* Elimina los estilos de lista por defecto (puntos, números, etc.) */
+    display: flex; /* Utiliza flexbox para alinear los elementos de la lista en una fila */
+    justify-content: flex-start; /* Alinea los elementos de la lista al inicio (izquierda) */
+    padding-left: 0; /* Elimina el padding izquierdo de la lista */
+    margin-left: 0; /* Elimina el margen izquierdo de la lista */
+    gap: 15px; /* Añade un espacio de 15px entre los elementos de la lista para evitar que se superpongan */
 }
 
+/* Estilos de los elementos de la lista */
 nav ul li {
-    margin: 0 20px;
-    position: relative;
+    margin: 0 25px; /* Añade un margen de 23px a cada lado de los elementos de la lista */
+    position: relative; /* Permite el uso de pseudo-elementos como ::before */
 }
 
+/* Estilos de los enlaces de navegación */
 nav ul li a {
-    color: #fff;
-    background-color: #333; /* Coincidir con el color del header */
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    transition: color 0.3s, background-color 0.3s;
-    z-index: 10;
+    color: #fff; /* Establece el color del texto como blanco */
+    background-color: #333; /* Establece un fondo gris oscuro para los enlaces */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    font-weight: bold; /* Hace que el texto sea en negrita */
+    position: relative; /* Permite el uso de pseudo-elementos como ::before */
+    display: inline-block; /* Hace que el enlace ocupe solo el espacio necesario */
+    padding: 10px 20px; /* Añade un padding de 10px en la parte superior e inferior, y 20px a los lados */
+    transition: color 0.3s, background-color 0.3s; /* Añade una transición suave para color y fondo al hacer hover */
+    z-index: 10; /* Asegura que el enlace esté por encima de su pseudo-elemento */
 }
 
+/* Pseudo-elemento antes del enlace para efectos de hover */
 nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 140%;
-    height: 100%;
-    background: #333; /* Coincidir con el color del header */
-    transform: translate(-50%, -50%) skew(-20deg);
-    z-index: -1;
-    transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
+    content: ''; /* No muestra texto, solo un elemento decorativo */
+    position: absolute; /* Posiciona el pseudo-elemento de manera absoluta en relación al enlace */
+    top: 50%; /* Centra verticalmente el pseudo-elemento */
+    left: 50%; /* Centra horizontalmente el pseudo-elemento */
+    width: 130%; /* Establece el ancho del pseudo-elemento al 110% del enlace, ajustando para que no sea demasiado ancho */
+    height: 100%; /* Hace que el pseudo-elemento cubra el 100% de la altura del enlace */
+    background: #333; /* Coincide el color de fondo con el header */
+    transform: translate(-50%, -50%) skew(-20deg); /* Centra el pseudo-elemento y lo inclina para un efecto visual */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del enlace */
+    transition: transform 0.3s, background-color 0.3s, opacity 0.3s; /* Añade una transición suave para los efectos de hover */
 }
 
+/* Efecto hover en los enlaces de navegación */
 nav ul li a:hover {
-    color: #ff7f00;
-    background-color: #333; /* Asegurarse de que el fondo se mantenga consistente */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Añadir un pequeño efecto de sombra */
+    background-color: #333; /* Asegura que el fondo se mantenga gris oscuro al hacer hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Añade una sombra al texto para mayor contraste */
 }
 
+/* Efecto hover en el pseudo-elemento antes del enlace */
 nav ul li a:hover::before {
-    transform: translate(-50%, -50%) skew(-20deg) scaleX(1);
-    background-color: #ff7f00;
-    opacity: 0.6;
+    transform: translate(-50%, -50%) skew(-20deg) scaleX(1.05); /* Ajusta la escala del pseudo-elemento en el eje X al hacer hover para evitar superposición */
+    background-color: #ff7f00; /* Cambia el color de fondo del pseudo-elemento a naranja al hacer hover */
+    opacity: 0.6; /* Ajusta la opacidad del pseudo-elemento para un efecto más suave */
 }
 
 /* Estilos para el carrusel */
 .hero {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
+    position: relative; /* Posiciona el carrusel de manera relativa */
+    overflow: hidden; /* Oculta cualquier contenido que desborde el contenedor del carrusel */
+    height: 100vh; /* Establece la altura del carrusel al 100% de la altura de la ventana del navegador */
 }
 
 .carousel {
-    position: relative;
-    height: 100%;
+    position: relative; /* Posiciona el contenedor del carrusel de manera relativa */
+    height: 100%; /* Establece la altura del carrusel al 100% del contenedor */
 }
 
 .carousel-item {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    display: none; /* Oculta cada item del carrusel por defecto */
+    position: absolute; /* Posiciona los items del carrusel de manera absoluta */
+    width: 100%; /* Establece el ancho de cada item al 100% del carrusel */
+    height: 100%; /* Establece la altura de cada item al 100% del carrusel */
 }
 
 .carousel-item.active {
-    display: block;
+    display: block; /* Muestra el item activo del carrusel */
 }
 
 .carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: 100%; /* Establece la altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin distorsión */
 }
 
+/* Estilos de los subtítulos del carrusel */
 .carousel-caption {
-    position: absolute;
-    top: 50%; /* Cambiado para centrar verticalmente */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
+    position: absolute; /* Posiciona los subtítulos de manera absoluta dentro del carrusel */
+    top: 50%; /* Centra verticalmente los subtítulos dentro del carrusel */
+    left: 50%; /* Centra horizontalmente los subtítulos dentro del carrusel */
+    transform: translate(-50%, -50%); /* Ajusta para centrar completamente los subtítulos */
+    text-align: center; /* Centra el texto dentro de los subtítulos */
+    color: #fff; /* Establece el color del texto como blanco */
+    background: rgba(0, 0, 0, 0.6); /* Añade un fondo semitransparente negro detrás de los subtítulos */
+    padding: 20px; /* Añade un padding de 20px alrededor de los subtítulos */
+    border-radius: 10px; /* Redondea las esquinas de los subtítulos */
+    max-width: 80%; /* Limita el ancho máximo de los subtítulos al 80% del carrusel */
 }
 
+/* Estilo del texto principal en el carrusel */
 .carousel-caption h2 {
-    font-size: 2.5rem;
-    color: #fff; /* Asegurar que el texto resalte */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Añadir sombra para mayor contraste */
+    font-size: 2.5rem; /* Establece el tamaño de la fuente a 2.5 rem */
+    color: #fff; /* Asegura que el texto resalte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Añade sombra al texto para mayor contraste */
 }
 
+/* Estilo del texto secundario en el carrusel */
 .carousel-caption p {
-    font-size: 1.2rem;
-    color: #fff; /* Asegurar que el texto resalte */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Añadir sombra para mayor contraste */
+    font-size: 1.2rem; /* Establece el tamaño de la fuente a 1.2 rem */
+    color: #fff; /* Asegura que el texto resalte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Añade sombra al texto para mayor contraste */
 }
 
-/* Botones para cambiar slides */
+/* Botones para cambiar slides en el carrusel */
 .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que los elementos son clicables */
+    position: absolute; /* Posiciona los botones de manera absoluta dentro del carrusel */
+    top: 50%; /* Centra verticalmente los botones dentro del carrusel */
+    width: auto; /* Ajusta automáticamente el ancho de los botones */
+    padding: 16px; /* Añade un padding de 16px alrededor de los botones */
+    margin-top: -22px; /* Ajusta la posición de los botones ligeramente hacia arriba */
+    color: white; /* Establece el color del texto en blanco */
+    font-weight: bold; /* Hace que el texto dentro de los botones sea en negrita */
+    font-size: 18px; /* Establece el tamaño de la fuente a 18px */
+    transition: 0.6s ease; /* Añade una transición suave para el hover */
+    border-radius: 0 3px 3px 0; /* Redondea las esquinas del lado derecho de los botones */
+    user-select: none; /* Evita que el texto dentro de los botones sea seleccionable */
 }
 
+/* Botón de retroceso en el carrusel */
 .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
+    left: 0; /* Posiciona el botón de retroceso a la izquierda del carrusel */
+    border-radius: 3px 0 0 3px; /* Redondea las esquinas del lado izquierdo del botón */
 }
 
+/* Botón de avance en el carrusel */
 .next {
-    right: 0;
-    border-radius: 0 3px 3px 0;
+    right: 0; /* Posiciona el botón de avance a la derecha del carrusel */
+    border-radius: 0 3px 3px 0; /* Redondea las esquinas del lado derecho del botón */
 }
 
+/* Efecto hover en los botones del carrusel */
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Cambia el color de fondo a negro semitransparente al hacer hover */
 }
 
-/* Estilos para otras secciones */
+/* Estilos para otras secciones de la página */
 .about, .services, .zonaOp, .contact, .transparencia {
-    padding: 50px 0;
-    background: #fff;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 0; /* Añade un padding de 50px en la parte superior e inferior de cada sección */
+    background: #fff; /* Establece un fondo blanco para cada sección */
+    margin: 20px 0; /* Añade un margen de 20px en la parte superior e inferior de cada sección */
+    border-radius: 10px; /* Redondea las esquinas de las secciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para dar profundidad */
 }
 
+/* Estilo de los títulos de sección */
 section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: center; /* Centra el título de la sección */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del título */
+    color: #333; /* Establece el color del texto del título como gris oscuro */
 }
 
+/* Estilo de los párrafos de sección */
 section p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #666;
+    text-align: center; /* Centra el texto dentro de la sección */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del párrafo */
+    color: #666; /* Establece el color del texto como gris medio */
 }
 
+/* Estilo de los contenedores de servicios */
 .service {
-    background: #f9f9f9;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background: #f9f9f9; /* Establece un fondo gris claro para cada contenedor de servicio */
+    margin: 20px 0; /* Añade un margen de 20px en la parte superior e inferior del contenedor */
+    padding: 20px; /* Añade un padding de 20px alrededor del contenido del contenedor */
+    border-radius: 8px; /* Redondea las esquinas del contenedor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para dar profundidad */
+    text-align: center; /* Centra el texto dentro del contenedor */
 }
 
+/* Estilo de las imágenes dentro de los contenedores de servicios */
 .service img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    max-width: 100%; /* Establece el ancho máximo de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo de la imagen */
 }
 
 /* Contenedor del mapa */
 .map-container {
-    width: 100%;
-    margin-top: 20px;
+    width: 100%; /* Establece el ancho del contenedor del mapa al 100% del contenedor padre */
+    margin-top: 20px; /* Añade un margen superior de 20px sobre el mapa */
 }
 
+/* Estilo del iframe del mapa */
 .map-container iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
+    width: 100%; /* Establece el ancho del iframe al 100% del contenedor del mapa */
+    height: 450px; /* Establece la altura del iframe a 450px */
+    border: 0; /* Elimina el borde alrededor del iframe */
 }
 
-/* Pie de página */
+/* Estilos del pie de página */
 footer {
-    background: #333; /* Cambiado de #000 a #333 */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
+    background: #333; /* Establece un fondo gris oscuro para el pie de página */
+    color: #fff; /* Define el color del texto en blanco */
+    text-align: center; /* Centra el texto dentro del pie de página */
+    padding: 20px 0; /* Añade un padding de 20px en la parte superior e inferior del pie de página */
+    position: relative; /* Posiciona el pie de página de manera relativa */
 }
 
+/* Estilo general del texto en el footer */
 footer p {
-    margin: 5px 0;
-    font-size: 0.9rem;
+    text-align: center; /* Centra el texto dentro del footer */
+    font-size: 0.9rem; /* Establece el tamaño de la fuente para el texto del footer */
+    color: ; /* Define el color del texto como gris oscuro */
+    margin: 10px 0; /* Añade un margen superior e inferior de 10px */
 }
 
+/* Estilo de los enlaces dentro del footer */
+footer p a {
+    color: #ff7f00; /* Establece el color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    font-weight: bold; /* Hace que los enlaces sean en negrita */
+}
+
+/* Efecto hover para los enlaces en el footer */
+footer p a:hover {
+    text-decoration: underline; /* Añade un subrayado al enlace cuando se pasa el ratón por encima */
+}
+
+/* Estilo de los iconos sociales dentro del pie de página */
 .social-icons a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s;
+    color: #fff; /* Establece el color de los iconos sociales en blanco */
+    margin: 0 10px; /* Añade un margen de 10px a cada lado de los iconos */
+    font-size: 1.2rem; /* Establece el tamaño de la fuente de los iconos a 1.2 rem */
+    transition: color 0.3s; /* Añade una transición suave para el color al hacer hover */
 }
 
+/* Efecto hover en los iconos sociales */
 .social-icons a:hover {
-    color: #ff7f00;
+    color: #ff7f00; /* Cambia el color de los iconos a naranja al hacer hover */
 }
 
-/* Formulario de contacto */
+/* Estilos para el formulario de contacto */
 form {
-    background: #fff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff; /* Establece un fondo blanco para el formulario */
+    padding: 20px; /* Añade un padding de 20px alrededor del formulario */
+    margin-top: 20px; /* Añade un margen superior de 20px sobre el formulario */
+    border-radius: 10px; /* Redondea las esquinas del formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para dar profundidad */
 }
 
+/* Estilo de las etiquetas dentro del formulario */
 form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 8px; /* Añade un margen inferior de 8px debajo de las etiquetas */
+    font-weight: bold; /* Hace que el texto dentro de las etiquetas sea en negrita */
+    color: #333; /* Establece el color del texto como gris oscuro */
 }
 
+/* Estilo de los campos de entrada y áreas de texto dentro del formulario */
 form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* Establece el ancho de los campos de entrada y áreas de texto al 100% del formulario */
+    padding: 10px; /* Añade un padding de 10px alrededor del contenido dentro de los campos */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo de los campos */
+    border: 1px solid #ccc; /* Añade un borde gris claro alrededor de los campos */
+    border-radius: 5px; /* Redondea las esquinas de los campos */
 }
 
+/* Estilo del botón de envío dentro del formulario */
 form button {
-    background: #ff7f00;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    background: #ff7f00; /* Establece un fondo naranja para el botón */
+    color: #fff; /* Establece el color del texto en blanco */
+    border: none; /* Elimina el borde alrededor del botón */
+    padding: 10px 20px; /* Añade un padding de 10px en la parte superior e inferior, y 20px a los lados del botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que el botón es clicable */
+    transition: background 0.3s; /* Añade una transición suave para el color de fondo al hacer hover */
 }
 
+/* Efecto hover en el botón de envío */
 form button:hover {
-    background: #cc6a00; /* Hacer el botón más oscuro al pasar el ratón */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra al botón */
+    background: #cc6a00; /* Hace el botón más oscuro al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra al botón para darle más profundidad */
 }
 
 /* Icono del menú móvil */
 .menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-    margin-right: 20px;
+    display: none; /* Oculta el icono del menú móvil por defecto */
+    font-size: 24px; /* Establece el tamaño de la fuente del icono a 24px */
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que el icono es clicable */
+    color: #fff; /* Establece el color del icono en blanco */
+    margin-right: 20px; /* Añade un margen derecho de 20px al icono */
 }
 
-/* Menú móvil */
+/* Estilos del menú móvil */
 .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    width: 250px;
-    background-color: #333; /* Cambiado de #000 a #333 */
-    color: #fff;
-    transition: left 0.3s ease;
-    z-index: 1000;
-    padding-top: 60px;
+    display: none; /* Oculta el menú móvil por defecto */
+    position: fixed; /* Posiciona el menú de manera fija dentro de la ventana del navegador */
+    top: 0; /* Posiciona el menú en la parte superior de la ventana */
+    left: -100%; /* Oculta el menú fuera de la vista en el lado izquierdo */
+    height: 100%; /* Establece la altura del menú al 100% de la ventana */
+    width: 250px; /* Establece el ancho del menú a 250px */
+    background-color: #333; /* Establece un fondo gris oscuro para el menú móvil */
+    color: #fff; /* Establece el color del texto en blanco */
+    transition: left 0.3s ease; /* Añade una transición suave para la posición al mostrar/ocultar el menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    padding-top: 60px; /* Añade un padding superior de 60px dentro del menú para evitar superposición con el header */
 }
 
+/* Estilo de la lista dentro del menú móvil */
 .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+    list-style: none; /* Elimina los estilos de lista por defecto dentro del menú móvil */
+    padding: 0; /* Elimina el padding por defecto dentro de la lista */
+    margin: 0; /* Elimina el margen por defecto dentro de la lista */
+    text-align: left; /* Alinea el texto a la izquierda dentro del menú móvil */
 }
 
+/* Estilo de los elementos de la lista dentro del menú móvil */
 .mobile-menu ul li {
-    padding: 15px 20px;
+    padding: 15px 20px; /* Añade un padding de 15px en la parte superior e inferior, y 20px a los lados */
 }
 
+/* Estilo de los enlaces dentro del menú móvil */
 .mobile-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    width: 100%;
+    color: #fff; /* Establece el color del texto en blanco */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    font-size: 18px; /* Establece el tamaño de la fuente a 18px */
+    display: block; /* Hace que los enlaces ocupen toda la línea */
+    width: 100%; /* Establece el ancho de los enlaces al 100% */
 }
 
+/* Estilos para la sección de transparencia */
 .transparencia {
-    padding: 50px 0;
-    background: #fff;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 0; /* Añade un padding de 50px en la parte superior e inferior de la sección */
+    background: #fff; /* Establece un fondo blanco para la sección */
+    margin: 20px 0; /* Añade un margen de 20px en la parte superior e inferior de la sección */
+    border-radius: 10px; /* Redondea las esquinas de la sección */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para dar profundidad */
 }
 
+/* Estilo del título dentro de la sección de transparencia */
 .transparencia h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: center; /* Centra el texto del título */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del título */
+    color: #333; /* Establece el color del texto como gris oscuro */
 }
 
+/* Estilo de los enlaces a documentos dentro de la sección de transparencia */
 .document-link {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Centra el texto dentro de la sección */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo de cada enlace */
 }
 
+/* Estilo de los enlaces dentro de la sección de transparencia */
 .document-link a {
-    font-size: 1.2rem;
-    color: #007BFF;
-    text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1.2rem; /* Establece el tamaño de la fuente a 1.2 rem */
+    color: #007BFF; /* Establece el color del texto en azul */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    transition: color 0.3s; /* Añade una transición suave para el color al hacer hover */
 }
 
+/* Efecto hover en los enlaces de la sección de transparencia */
 .document-link a:hover {
-    color: #0056b3;
+    color: #0056b3; /* Cambia el color del texto a un azul más oscuro al hacer hover */
 }
 
 /* Estilos para media queries */
 @media (max-width: 768px) {
     .header-content {
-        justify-content: space-between;
+        justify-content: space-between; /* Ajusta la justificación para que los elementos se distribuyan uniformemente en pantallas pequeñas */
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* Muestra el icono del menú móvil en pantallas pequeñas */
     }
 
     nav ul {
-        display: none;
+        display: none; /* Oculta la lista de navegación en pantallas pequeñas */
     }
 
     .mobile-menu.show {
-        display: block;
-        left: 0;
+        display: block; /* Muestra el menú móvil cuando se activa */
+        left: 0; /* Mueve el menú móvil a la vista desde la izquierda */
     }
 }
